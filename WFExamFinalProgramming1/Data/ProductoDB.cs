@@ -71,5 +71,59 @@ namespace WFExamFinalProgramming1.Data
             }
             return producto;
         }
+
+        public void InsertProducto(Producto producto)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "INSERT INTO productos (sku, nombre, descripcion, precio_compra, precio_venta, precio_mayoreo, stock, fecha_alta, fecha_actualizacion, activo) VALUES (@sku, @nombre, @descripcion, @precio_compra, @precio_venta, @precio_mayoreo, @stock, @fecha_alta, @fecha_actualizacion, @activo)";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@sku", producto.Sku);
+                command.Parameters.AddWithValue("@nombre", producto.Nombre);
+                command.Parameters.AddWithValue("@descripcion", producto.Descripcion);
+                command.Parameters.AddWithValue("@precio_compra", producto.PrecioCompra);
+                command.Parameters.AddWithValue("@precio_venta", producto.PrecioVenta);
+                command.Parameters.AddWithValue("@precio_mayoreo", producto.PrecioMayoreo);
+                command.Parameters.AddWithValue("@stock", producto.Stock);
+                command.Parameters.AddWithValue("@fecha_alta", producto.FechaAlta);
+                command.Parameters.AddWithValue("@fecha_actualizacion", producto.FechaActualizacion);
+                command.Parameters.AddWithValue("@activo", producto.Activo);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void UpdateProducto(Producto producto)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "UPDATE productos SET sku = @sku, nombre = @nombre, descripcion = @descripcion, precio_compra = @precio_compra, precio_venta = @precio_venta, precio_mayoreo = @precio_mayoreo, stock = @stock, fecha_actualizacion = @fecha_actualizacion, activo = @activo WHERE producto_id = @producto_id";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@sku", producto.Sku);
+                command.Parameters.AddWithValue("@nombre", producto.Nombre);
+                command.Parameters.AddWithValue("@descripcion", producto.Descripcion);
+                command.Parameters.AddWithValue("@precio_compra", producto.PrecioCompra);
+                command.Parameters.AddWithValue("@precio_venta", producto.PrecioVenta);
+                command.Parameters.AddWithValue("@precio_mayoreo", producto.PrecioMayoreo);
+                command.Parameters.AddWithValue("@stock", producto.Stock);
+                command.Parameters.AddWithValue("@fecha_actualizacion", producto.FechaActualizacion);
+                command.Parameters.AddWithValue("@activo", producto.Activo);
+                command.Parameters.AddWithValue("@producto_id", producto.Id);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteProducto(int id)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "DELETE FROM productos WHERE producto_id = @producto_id";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@producto_id", id);
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }

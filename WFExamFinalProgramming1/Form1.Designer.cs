@@ -57,6 +57,14 @@
             this.fechaActualizacionTxt = new System.Windows.Forms.Label();
             this.productosGridView = new System.Windows.Forms.DataGridView();
             this.buscarBtn = new System.Windows.Forms.Button();
+            this.reiniciarBtn = new System.Windows.Forms.Button();
+            this.totalProductosLbl = new System.Windows.Forms.Label();
+            this.totalProductosTxt = new System.Windows.Forms.Label();
+            this.buscarTxt = new System.Windows.Forms.TextBox();
+            this.filtroLbl = new System.Windows.Forms.Label();
+            this.buscarFiltroBtn = new System.Windows.Forms.Button();
+            this.activosBtn = new System.Windows.Forms.Button();
+            this.inactivosBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.precioCompraTxt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.precioVentaTxt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.precioMayoreoTxt)).BeginInit();
@@ -91,7 +99,7 @@
             this.idTxt.Location = new System.Drawing.Point(189, 92);
             this.idTxt.Name = "idTxt";
             this.idTxt.Size = new System.Drawing.Size(134, 23);
-            this.idTxt.TabIndex = 3;
+            this.idTxt.TabIndex = 0;
             // 
             // idLbl
             // 
@@ -272,6 +280,7 @@
             this.crearBtn.TabIndex = 19;
             this.crearBtn.Text = "Crear";
             this.crearBtn.UseVisualStyleBackColor = false;
+            this.crearBtn.Click += new System.EventHandler(this.crearBtn_Click);
             // 
             // actualizarBtn
             // 
@@ -284,6 +293,7 @@
             this.actualizarBtn.TabIndex = 20;
             this.actualizarBtn.Text = "Actualizar";
             this.actualizarBtn.UseVisualStyleBackColor = false;
+            this.actualizarBtn.Click += new System.EventHandler(this.actualizarBtn_Click);
             // 
             // eliminarBtn
             // 
@@ -296,6 +306,7 @@
             this.eliminarBtn.TabIndex = 21;
             this.eliminarBtn.Text = "Eliminar";
             this.eliminarBtn.UseVisualStyleBackColor = false;
+            this.eliminarBtn.Click += new System.EventHandler(this.eliminarBtn_Click);
             // 
             // leerBtn
             // 
@@ -370,17 +381,18 @@
             this.productosGridView.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.productosGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productosGridView.GridColor = System.Drawing.SystemColors.Window;
-            this.productosGridView.Location = new System.Drawing.Point(64, 323);
+            this.productosGridView.Location = new System.Drawing.Point(64, 363);
             this.productosGridView.Name = "productosGridView";
-            this.productosGridView.Size = new System.Drawing.Size(1064, 356);
+            this.productosGridView.Size = new System.Drawing.Size(1064, 316);
             this.productosGridView.TabIndex = 28;
+            this.productosGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productosGridView_CellContentClick);
             // 
             // buscarBtn
             // 
             this.buscarBtn.BackColor = System.Drawing.SystemColors.Highlight;
             this.buscarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarBtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.buscarBtn.Location = new System.Drawing.Point(395, 91);
+            this.buscarBtn.Location = new System.Drawing.Point(395, 89);
             this.buscarBtn.Name = "buscarBtn";
             this.buscarBtn.Size = new System.Drawing.Size(98, 40);
             this.buscarBtn.TabIndex = 29;
@@ -388,12 +400,114 @@
             this.buscarBtn.UseVisualStyleBackColor = false;
             this.buscarBtn.Click += new System.EventHandler(this.buscarBtn_Click);
             // 
+            // reiniciarBtn
+            // 
+            this.reiniciarBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.reiniciarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reiniciarBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.reiniciarBtn.Location = new System.Drawing.Point(1030, 311);
+            this.reiniciarBtn.Name = "reiniciarBtn";
+            this.reiniciarBtn.Size = new System.Drawing.Size(98, 40);
+            this.reiniciarBtn.TabIndex = 30;
+            this.reiniciarBtn.Text = "Reiniciar";
+            this.reiniciarBtn.UseVisualStyleBackColor = false;
+            this.reiniciarBtn.Click += new System.EventHandler(this.reiniciarBtn_Click);
+            // 
+            // totalProductosLbl
+            // 
+            this.totalProductosLbl.AutoSize = true;
+            this.totalProductosLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalProductosLbl.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.totalProductosLbl.Location = new System.Drawing.Point(961, 44);
+            this.totalProductosLbl.Name = "totalProductosLbl";
+            this.totalProductosLbl.Size = new System.Drawing.Size(145, 17);
+            this.totalProductosLbl.TabIndex = 31;
+            this.totalProductosLbl.Text = "Total de productos";
+            // 
+            // totalProductosTxt
+            // 
+            this.totalProductosTxt.AutoSize = true;
+            this.totalProductosTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalProductosTxt.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.totalProductosTxt.Location = new System.Drawing.Point(1111, 44);
+            this.totalProductosTxt.Name = "totalProductosTxt";
+            this.totalProductosTxt.Size = new System.Drawing.Size(17, 17);
+            this.totalProductosTxt.TabIndex = 31;
+            this.totalProductosTxt.Text = "0";
+            // 
+            // buscarTxt
+            // 
+            this.buscarTxt.BackColor = System.Drawing.SystemColors.Window;
+            this.buscarTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarTxt.Location = new System.Drawing.Point(147, 320);
+            this.buscarTxt.Name = "buscarTxt";
+            this.buscarTxt.Size = new System.Drawing.Size(346, 23);
+            this.buscarTxt.TabIndex = 33;
+            // 
+            // filtroLbl
+            // 
+            this.filtroLbl.AutoSize = true;
+            this.filtroLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filtroLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.filtroLbl.Location = new System.Drawing.Point(62, 320);
+            this.filtroLbl.Name = "filtroLbl";
+            this.filtroLbl.Size = new System.Drawing.Size(50, 20);
+            this.filtroLbl.TabIndex = 32;
+            this.filtroLbl.Text = "Filtro";
+            // 
+            // buscarFiltroBtn
+            // 
+            this.buscarFiltroBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buscarFiltroBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarFiltroBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.buscarFiltroBtn.Location = new System.Drawing.Point(551, 311);
+            this.buscarFiltroBtn.Name = "buscarFiltroBtn";
+            this.buscarFiltroBtn.Size = new System.Drawing.Size(98, 40);
+            this.buscarFiltroBtn.TabIndex = 34;
+            this.buscarFiltroBtn.Text = "Buscar";
+            this.buscarFiltroBtn.UseVisualStyleBackColor = false;
+            this.buscarFiltroBtn.Click += new System.EventHandler(this.buscarFiltroBtn_Click);
+            // 
+            // activosBtn
+            // 
+            this.activosBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.activosBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.activosBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.activosBtn.Location = new System.Drawing.Point(709, 311);
+            this.activosBtn.Name = "activosBtn";
+            this.activosBtn.Size = new System.Drawing.Size(98, 40);
+            this.activosBtn.TabIndex = 35;
+            this.activosBtn.Text = "Activos";
+            this.activosBtn.UseVisualStyleBackColor = false;
+            this.activosBtn.Click += new System.EventHandler(this.activosBtn_Click);
+            // 
+            // inactivosBtn
+            // 
+            this.inactivosBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.inactivosBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inactivosBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.inactivosBtn.Location = new System.Drawing.Point(873, 311);
+            this.inactivosBtn.Name = "inactivosBtn";
+            this.inactivosBtn.Size = new System.Drawing.Size(98, 40);
+            this.inactivosBtn.TabIndex = 36;
+            this.inactivosBtn.Text = "Inactivos";
+            this.inactivosBtn.UseVisualStyleBackColor = false;
+            this.inactivosBtn.Click += new System.EventHandler(this.inactivosBtn_Click);
+            // 
             // CRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1184, 711);
+            this.Controls.Add(this.inactivosBtn);
+            this.Controls.Add(this.activosBtn);
+            this.Controls.Add(this.buscarFiltroBtn);
+            this.Controls.Add(this.buscarTxt);
+            this.Controls.Add(this.filtroLbl);
+            this.Controls.Add(this.totalProductosTxt);
+            this.Controls.Add(this.totalProductosLbl);
+            this.Controls.Add(this.reiniciarBtn);
             this.Controls.Add(this.buscarBtn);
             this.Controls.Add(this.productosGridView);
             this.Controls.Add(this.fechaActualizacionTxt);
@@ -466,6 +580,14 @@
         private System.Windows.Forms.Label fechaActualizacionTxt;
         private System.Windows.Forms.DataGridView productosGridView;
         private System.Windows.Forms.Button buscarBtn;
+        private System.Windows.Forms.Button reiniciarBtn;
+        private System.Windows.Forms.Label totalProductosLbl;
+        private System.Windows.Forms.Label totalProductosTxt;
+        private System.Windows.Forms.TextBox buscarTxt;
+        private System.Windows.Forms.Label filtroLbl;
+        private System.Windows.Forms.Button buscarFiltroBtn;
+        private System.Windows.Forms.Button activosBtn;
+        private System.Windows.Forms.Button inactivosBtn;
     }
 }
 

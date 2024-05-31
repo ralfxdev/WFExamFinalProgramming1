@@ -26,6 +26,7 @@ namespace WFExamFinalProgramming1.Data
                 while (reader.Read())
                 {
                     Producto producto = new Producto();
+                    producto.Id = Convert.ToInt32(reader["producto_id"]);
                     producto.Sku = reader["sku"].ToString();
                     producto.Nombre = reader["nombre"].ToString();
                     producto.Descripcion = reader["descripcion"].ToString();
@@ -77,7 +78,7 @@ namespace WFExamFinalProgramming1.Data
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "INSERT INTO productos (sku, nombre, descripcion, precio_compra, precio_venta, precio_mayoreo, stock, fecha_alta, fecha_actualizacion, activo) VALUES (@sku, @nombre, @descripcion, @precio_compra, @precio_venta, @precio_mayoreo, @stock, @fecha_alta, @fecha_actualizacion, @activo)";
+                string query = "INSERT INTO productos (sku, nombre, descripcion, precio_compra, precio_venta, precio_mayoreo, stock, activo) VALUES (@sku, @nombre, @descripcion, @precio_compra, @precio_venta, @precio_mayoreo, @stock, @activo)";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@sku", producto.Sku);
                 command.Parameters.AddWithValue("@nombre", producto.Nombre);
@@ -86,8 +87,6 @@ namespace WFExamFinalProgramming1.Data
                 command.Parameters.AddWithValue("@precio_venta", producto.PrecioVenta);
                 command.Parameters.AddWithValue("@precio_mayoreo", producto.PrecioMayoreo);
                 command.Parameters.AddWithValue("@stock", producto.Stock);
-                command.Parameters.AddWithValue("@fecha_alta", producto.FechaAlta);
-                command.Parameters.AddWithValue("@fecha_actualizacion", producto.FechaActualizacion);
                 command.Parameters.AddWithValue("@activo", producto.Activo);
                 command.ExecuteNonQuery();
             }
@@ -98,7 +97,7 @@ namespace WFExamFinalProgramming1.Data
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "UPDATE productos SET sku = @sku, nombre = @nombre, descripcion = @descripcion, precio_compra = @precio_compra, precio_venta = @precio_venta, precio_mayoreo = @precio_mayoreo, stock = @stock, fecha_actualizacion = @fecha_actualizacion, activo = @activo WHERE producto_id = @producto_id";
+                string query = "UPDATE productos SET sku = @sku, nombre = @nombre, descripcion = @descripcion, precio_compra = @precio_compra, precio_venta = @precio_venta, precio_mayoreo = @precio_mayoreo, stock = @stock, activo = @activo WHERE producto_id = @producto_id";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@sku", producto.Sku);
                 command.Parameters.AddWithValue("@nombre", producto.Nombre);
@@ -107,7 +106,6 @@ namespace WFExamFinalProgramming1.Data
                 command.Parameters.AddWithValue("@precio_venta", producto.PrecioVenta);
                 command.Parameters.AddWithValue("@precio_mayoreo", producto.PrecioMayoreo);
                 command.Parameters.AddWithValue("@stock", producto.Stock);
-                command.Parameters.AddWithValue("@fecha_actualizacion", producto.FechaActualizacion);
                 command.Parameters.AddWithValue("@activo", producto.Activo);
                 command.Parameters.AddWithValue("@producto_id", producto.Id);
                 command.ExecuteNonQuery();
@@ -125,5 +123,87 @@ namespace WFExamFinalProgramming1.Data
                 command.ExecuteNonQuery();
             }
         }
+
+        public List<Producto> GetProductosByActivo(bool activo)
+        {
+            List<Producto> productos = new List<Producto>();
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM productos WHERE activo = @activo";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@activo", activo);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Producto producto = new Producto();
+                    producto.Id = Convert.ToInt32(reader["producto_id"]);
+                    producto.Sku = reader["sku"].ToString();
+                    producto.Nombre = reader["nombre"].ToString();
+                    producto.Descripcion = reader["descripcion"].ToString();
+                    producto.PrecioCompra = Convert.ToDecimal(reader["precio_compra"]);
+                    producto.PrecioVenta = Convert.ToDecimal(reader["precio_venta"]);
+                    producto.PrecioMayoreo = Convert.ToDecimal(reader["precio_mayoreo"]);
+                    producto.Stock = Convert.ToInt32(reader["stock"]);
+                    producto.FechaAlta = Convert.ToDateTime(reader["fecha_alta"]);
+                    producto.FechaActualizacion = Convert.ToDateTime(reader["fecha_actualizacion"]);
+                    producto.Activo = Convert.ToBoolean(reader["activo"]);
+                    productos.Add(producto);
+                }
+            }
+
+            return productos;
+        }
+
+        public List<Producto> GetProductosByNombre(string nombre)
+        {
+            List<Producto> productos = new List<Producto>();
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM productos WHERE nombre LIKE @nombre";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Producto producto = new Producto();
+                    producto.Id = Convert.ToInt32(reader["producto_id"]);
+                    producto.Sku = reader["sku"].ToString();
+                    producto.Nombre = reader["nombre"].ToString();
+                    producto.Descripcion = reader["descripcion"].ToString();
+                    producto.PrecioCompra = Convert.ToDecimal(reader["precio_compra"]);
+                    producto.PrecioVenta = Convert.ToDecimal(reader["precio_venta"]);
+                    producto.PrecioMayoreo = Convert.ToDecimal(reader["precio_mayoreo"]);
+                    producto.Stock = Convert.ToInt32(reader["stock"]);
+                    producto.FechaAlta = Convert.ToDateTime(reader["fecha_alta"]);
+                    producto.FechaActualizacion = Convert.ToDateTime(reader["fecha_actualizacion"]);
+                    producto.Activo = Convert.ToBoolean(reader["activo"]);
+                    productos.Add(producto);
+                }
+            }
+
+            return productos;
+        }
+
+        public int GetTotalProductos()
+        {
+            int total = 0;
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM productos";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                total = Convert.ToInt32(command.ExecuteScalar());
+            }
+
+            return total;
+        }
+
     }
 }

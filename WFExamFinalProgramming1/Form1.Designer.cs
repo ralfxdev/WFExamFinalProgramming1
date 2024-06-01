@@ -79,7 +79,7 @@
             this.skuLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.skuLbl.Location = new System.Drawing.Point(62, 133);
             this.skuLbl.Name = "skuLbl";
-            this.skuLbl.Size = new System.Drawing.Size(52, 20);
+            this.skuLbl.Size = new System.Drawing.Size(66, 25);
             this.skuLbl.TabIndex = 0;
             this.skuLbl.Text = "SKU*";
             // 
@@ -89,7 +89,7 @@
             this.skuTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.skuTxt.Location = new System.Drawing.Point(189, 134);
             this.skuTxt.Name = "skuTxt";
-            this.skuTxt.Size = new System.Drawing.Size(134, 23);
+            this.skuTxt.Size = new System.Drawing.Size(134, 26);
             this.skuTxt.TabIndex = 1;
             // 
             // idTxt
@@ -98,7 +98,7 @@
             this.idTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idTxt.Location = new System.Drawing.Point(189, 92);
             this.idTxt.Name = "idTxt";
-            this.idTxt.Size = new System.Drawing.Size(134, 23);
+            this.idTxt.Size = new System.Drawing.Size(134, 26);
             this.idTxt.TabIndex = 0;
             // 
             // idLbl
@@ -108,7 +108,7 @@
             this.idLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.idLbl.Location = new System.Drawing.Point(62, 91);
             this.idLbl.Name = "idLbl";
-            this.idLbl.Size = new System.Drawing.Size(28, 20);
+            this.idLbl.Size = new System.Drawing.Size(33, 25);
             this.idLbl.TabIndex = 2;
             this.idLbl.Text = "ID";
             // 
@@ -118,7 +118,7 @@
             this.nombreTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreTxt.Location = new System.Drawing.Point(189, 178);
             this.nombreTxt.Name = "nombreTxt";
-            this.nombreTxt.Size = new System.Drawing.Size(304, 23);
+            this.nombreTxt.Size = new System.Drawing.Size(304, 26);
             this.nombreTxt.TabIndex = 5;
             // 
             // nombreLbl
@@ -128,7 +128,7 @@
             this.nombreLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.nombreLbl.Location = new System.Drawing.Point(62, 177);
             this.nombreLbl.Name = "nombreLbl";
-            this.nombreLbl.Size = new System.Drawing.Size(78, 20);
+            this.nombreLbl.Size = new System.Drawing.Size(96, 25);
             this.nombreLbl.TabIndex = 4;
             this.nombreLbl.Text = "Nombre*";
             // 
@@ -150,7 +150,7 @@
             this.descripcionLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.descripcionLbl.Location = new System.Drawing.Point(62, 242);
             this.descripcionLbl.Name = "descripcionLbl";
-            this.descripcionLbl.Size = new System.Drawing.Size(103, 20);
+            this.descripcionLbl.Size = new System.Drawing.Size(125, 25);
             this.descripcionLbl.TabIndex = 6;
             this.descripcionLbl.Text = "Descripción";
             // 
@@ -174,7 +174,7 @@
             this.precioCompraLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.precioCompraLbl.Location = new System.Drawing.Point(547, 91);
             this.precioCompraLbl.Name = "precioCompraLbl";
-            this.precioCompraLbl.Size = new System.Drawing.Size(156, 20);
+            this.precioCompraLbl.Size = new System.Drawing.Size(193, 25);
             this.precioCompraLbl.TabIndex = 10;
             this.precioCompraLbl.Text = "Precio Compra* Q.";
             // 
@@ -185,7 +185,7 @@
             this.precioVentaLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.precioVentaLbl.Location = new System.Drawing.Point(547, 133);
             this.precioVentaLbl.Name = "precioVentaLbl";
-            this.precioVentaLbl.Size = new System.Drawing.Size(142, 20);
+            this.precioVentaLbl.Size = new System.Drawing.Size(174, 25);
             this.precioVentaLbl.TabIndex = 12;
             this.precioVentaLbl.Text = "Precio Venta* Q.";
             // 
@@ -209,7 +209,7 @@
             this.precioMayoreoLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.precioMayoreoLbl.Location = new System.Drawing.Point(547, 177);
             this.precioMayoreoLbl.Name = "precioMayoreoLbl";
-            this.precioMayoreoLbl.Size = new System.Drawing.Size(155, 20);
+            this.precioMayoreoLbl.Size = new System.Drawing.Size(192, 25);
             this.precioMayoreoLbl.TabIndex = 14;
             this.precioMayoreoLbl.Text = "Precio Mayoreo Q.";
             // 
@@ -233,7 +233,7 @@
             this.stockLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.stockLbl.Location = new System.Drawing.Point(547, 222);
             this.stockLbl.Name = "stockLbl";
-            this.stockLbl.Size = new System.Drawing.Size(55, 20);
+            this.stockLbl.Size = new System.Drawing.Size(67, 25);
             this.stockLbl.TabIndex = 16;
             this.stockLbl.Text = "Stock";
             // 
@@ -256,7 +256,7 @@
             this.disponibleLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.disponibleLbl.Location = new System.Drawing.Point(547, 262);
             this.disponibleLbl.Name = "disponibleLbl";
-            this.disponibleLbl.Size = new System.Drawing.Size(93, 20);
+            this.disponibleLbl.Size = new System.Drawing.Size(113, 25);
             this.disponibleLbl.TabIndex = 17;
             this.disponibleLbl.Text = "Disponible";
             // 
@@ -265,7 +265,7 @@
             this.disponibleCheck.AutoSize = true;
             this.disponibleCheck.Location = new System.Drawing.Point(724, 268);
             this.disponibleCheck.Name = "disponibleCheck";
-            this.disponibleCheck.Size = new System.Drawing.Size(15, 14);
+            this.disponibleCheck.Size = new System.Drawing.Size(18, 17);
             this.disponibleCheck.TabIndex = 18;
             this.disponibleCheck.UseVisualStyleBackColor = true;
             // 
@@ -328,7 +328,7 @@
             this.tittle.ForeColor = System.Drawing.SystemColors.Highlight;
             this.tittle.Location = new System.Drawing.Point(57, 23);
             this.tittle.Name = "tittle";
-            this.tittle.Size = new System.Drawing.Size(427, 54);
+            this.tittle.Size = new System.Drawing.Size(536, 67);
             this.tittle.TabIndex = 23;
             this.tittle.Text = "Productos - CRUD";
             // 
@@ -339,7 +339,7 @@
             this.fechaCreacionLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.fechaCreacionLbl.Location = new System.Drawing.Point(902, 88);
             this.fechaCreacionLbl.Name = "fechaCreacionLbl";
-            this.fechaCreacionLbl.Size = new System.Drawing.Size(160, 20);
+            this.fechaCreacionLbl.Size = new System.Drawing.Size(195, 25);
             this.fechaCreacionLbl.TabIndex = 24;
             this.fechaCreacionLbl.Text = "Fecha de Creación";
             // 
@@ -350,7 +350,7 @@
             this.fechaActualizacionLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.fechaActualizacionLbl.Location = new System.Drawing.Point(902, 137);
             this.fechaActualizacionLbl.Name = "fechaActualizacionLbl";
-            this.fechaActualizacionLbl.Size = new System.Drawing.Size(196, 20);
+            this.fechaActualizacionLbl.Size = new System.Drawing.Size(237, 25);
             this.fechaActualizacionLbl.TabIndex = 25;
             this.fechaActualizacionLbl.Text = "Fecha de Actualización";
             // 
@@ -361,7 +361,7 @@
             this.fechaCreacionTxt.ForeColor = System.Drawing.SystemColors.Highlight;
             this.fechaCreacionTxt.Location = new System.Drawing.Point(903, 115);
             this.fechaCreacionTxt.Name = "fechaCreacionTxt";
-            this.fechaCreacionTxt.Size = new System.Drawing.Size(34, 17);
+            this.fechaCreacionTxt.Size = new System.Drawing.Size(40, 20);
             this.fechaCreacionTxt.TabIndex = 26;
             this.fechaCreacionTxt.Text = "N/A";
             // 
@@ -372,7 +372,7 @@
             this.fechaActualizacionTxt.ForeColor = System.Drawing.SystemColors.Highlight;
             this.fechaActualizacionTxt.Location = new System.Drawing.Point(903, 163);
             this.fechaActualizacionTxt.Name = "fechaActualizacionTxt";
-            this.fechaActualizacionTxt.Size = new System.Drawing.Size(34, 17);
+            this.fechaActualizacionTxt.Size = new System.Drawing.Size(40, 20);
             this.fechaActualizacionTxt.TabIndex = 27;
             this.fechaActualizacionTxt.Text = "N/A";
             // 
@@ -383,6 +383,7 @@
             this.productosGridView.GridColor = System.Drawing.SystemColors.Window;
             this.productosGridView.Location = new System.Drawing.Point(64, 363);
             this.productosGridView.Name = "productosGridView";
+            this.productosGridView.RowHeadersWidth = 51;
             this.productosGridView.Size = new System.Drawing.Size(1064, 316);
             this.productosGridView.TabIndex = 28;
             this.productosGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productosGridView_CellContentClick);
@@ -420,7 +421,7 @@
             this.totalProductosLbl.ForeColor = System.Drawing.SystemColors.Highlight;
             this.totalProductosLbl.Location = new System.Drawing.Point(961, 44);
             this.totalProductosLbl.Name = "totalProductosLbl";
-            this.totalProductosLbl.Size = new System.Drawing.Size(145, 17);
+            this.totalProductosLbl.Size = new System.Drawing.Size(166, 20);
             this.totalProductosLbl.TabIndex = 31;
             this.totalProductosLbl.Text = "Total de productos";
             // 
@@ -431,7 +432,7 @@
             this.totalProductosTxt.ForeColor = System.Drawing.SystemColors.Highlight;
             this.totalProductosTxt.Location = new System.Drawing.Point(1111, 44);
             this.totalProductosTxt.Name = "totalProductosTxt";
-            this.totalProductosTxt.Size = new System.Drawing.Size(17, 17);
+            this.totalProductosTxt.Size = new System.Drawing.Size(19, 20);
             this.totalProductosTxt.TabIndex = 31;
             this.totalProductosTxt.Text = "0";
             // 
@@ -441,7 +442,7 @@
             this.buscarTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarTxt.Location = new System.Drawing.Point(147, 320);
             this.buscarTxt.Name = "buscarTxt";
-            this.buscarTxt.Size = new System.Drawing.Size(346, 23);
+            this.buscarTxt.Size = new System.Drawing.Size(346, 26);
             this.buscarTxt.TabIndex = 33;
             // 
             // filtroLbl
@@ -451,7 +452,7 @@
             this.filtroLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.filtroLbl.Location = new System.Drawing.Point(62, 320);
             this.filtroLbl.Name = "filtroLbl";
-            this.filtroLbl.Size = new System.Drawing.Size(50, 20);
+            this.filtroLbl.Size = new System.Drawing.Size(60, 25);
             this.filtroLbl.TabIndex = 32;
             this.filtroLbl.Text = "Filtro";
             // 
